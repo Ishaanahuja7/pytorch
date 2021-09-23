@@ -133,3 +133,5 @@ python setup.py install --cmake && sccache --show-stats && (
     copy /Y "build\.ninja_log" "%PYTORCH_FINAL_PACKAGE_DIR%\"
   )
 )
+
+PowerShell -Command "sccache --show-stats | python tools/stats/upload_sccache_stats.py"

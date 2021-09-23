@@ -250,6 +250,8 @@ else
     if which sccache > /dev/null; then
       echo 'PyTorch Build Statistics'
       sccache --show-stats
+
+      sccache --show-stats | python tools/stats/upload_sccache_stats.py
     fi
 
     assert_git_not_dirty
